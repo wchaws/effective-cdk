@@ -108,4 +108,8 @@ const project = new AwsCdkTypeScriptApp({
   // typescriptVersion: '^3.9.5',                                              /* TypeScript version to use. */
 });
 
+const mkdoc = project.addTask('mkdoc');
+mkdoc.exec('./scripts/mkdoc.py src/stacks > docs/index.md');
+project.buildTask.spawn(mkdoc);
+
 project.synth();

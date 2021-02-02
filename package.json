@@ -18,7 +18,8 @@
     "synth": "npx projen synth",
     "deploy": "npx projen deploy",
     "destroy": "npx projen destroy",
-    "diff": "npx projen diff"
+    "diff": "npx projen diff",
+    "mkdoc": "npx projen mkdoc"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",

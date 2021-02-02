@@ -80,6 +80,9 @@
         },
         {
           "spawn": "synth"
+        },
+        {
+          "spawn": "mkdoc"
         }
       ]
     },
@@ -198,6 +201,14 @@
       "steps": [
         {
           "exec": "cdk diff"
+        }
+      ]
+    },
+    "mkdoc": {
+      "name": "mkdoc",
+      "steps": [
+        {
+          "exec": "./scripts/mkdoc.py src/stacks > docs/index.md"
         }
       ]
     }
