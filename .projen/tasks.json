@@ -208,7 +208,7 @@
       "name": "mkdoc",
       "steps": [
         {
-          "exec": "./scripts/mkdoc.py src/stacks > docs/index.md"
+          "exec": "./scripts/mkdoc.py src/stacks > docs/README.md"
         }
       ]
     }
