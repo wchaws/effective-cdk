@@ -5,12 +5,12 @@ import sys
 import textwrap
 
 
-DIR = sys.argv[1]
-# OUT = sys.argv[2]
+DIR = os.path.abspath(sys.argv[1])
+OUT = os.path.abspath(sys.argv[2])
 
 
-def render(filename):
-    type = os.path.splitext(filename)[1][1:]
+def render(filename, basedir=os.curdir):
+    lang = os.path.splitext(filename)[1][1:]
     show = False
     head = []
     desc = []
@@ -36,12 +36,13 @@ def render(filename):
     return ''.join((
         f'### {" ".join(head)}\n',
         f'{" ".join(desc)} \n\n',
-        f'[source code]({filename})\n',
-        f'```{type}\n',
+        f'[source code]({os.path.relpath(filename, basedir)})\n',
+        f'```{lang}\n',
         textwrap.dedent(''.join(body)),
         '```\n'
     ))
 
 
 for fname in map(lambda f: os.path.join(DIR, f), os.listdir(DIR)):
-    print(render(fname))
+    with open(OUT, 'w') as fp:
+        fp.write(render(fname, basedir=os.path.dirname(OUT)))

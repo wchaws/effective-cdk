@@ -109,7 +109,7 @@ const project = new AwsCdkTypeScriptApp({
 });
 
 const mkdoc = project.addTask('mkdoc');
-mkdoc.exec('./scripts/mkdoc.py src/stacks > docs/README.md');
+mkdoc.exec('./scripts/mkdoc.py src/stacks docs/README.md');
 project.buildTask.spawn(mkdoc);
 
 project.synth();
