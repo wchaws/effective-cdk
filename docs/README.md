@@ -57,3 +57,25 @@ function getOrCreateVpc(scope: Construct): ec2.IVpc {
       new ec2.Vpc(scope, 'Vpc', { maxAzs: 3, natGateways: 1 });
 }
 ```
+### S004: Do not hardcode env
+Don’t specify env with account and region like below that will generate account/region hardcode in CloudFormation template.
+
+see details [S004-Do-not-hardcode-env.ts](../src/stacks/S004-Do-not-hardcode-env.ts)
+
+```ts
+const app = new App();
+// Don't
+new MyStack(app, 'Stack', {
+  env: {
+    account: '123456',
+    region: 'us-east-1',
+  },
+});
+// Do
+new MyStack(app, 'Stack', {
+  env: {
+    region: process.env.CDK_DEFAULT_REGION,
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+  },
+});
+```
