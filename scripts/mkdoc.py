@@ -66,7 +66,8 @@ def _render(path, basedir=os.curdir, level=3):
     if os.path.isdir(path) and (level > 0):
         for p in map(lambda f: os.path.join(path, f), sorted(os.listdir(path))):
             for s in _render(p, basedir, level-1):
-                yield s
+                if s:
+                    yield s
 
 
 def render(path, basedir=os.curdir, level=3):
