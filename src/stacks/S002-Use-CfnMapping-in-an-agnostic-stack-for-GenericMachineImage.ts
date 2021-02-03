@@ -2,6 +2,8 @@ import * as ec2 from '@aws-cdk/aws-ec2';
 import { Construct, Stack, StackProps, CfnMapping, Aws } from '@aws-cdk/core';
 
 /// !title ### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
+/// !description This is originally discussed at https://stackoverflow.com/q/60645254/4108187
+/// !description and it's going to be supported from cdk side https://github.com/aws/aws-cdk/pull/12546
 
 /// !show
 class MyImage implements ec2.IMachineImage {
