@@ -34,14 +34,13 @@ def render(filename, basedir=os.curdir):
             if show:
                 body.append(line.rstrip())
     return cat(
-        cat(*head),
-        cat(*desc),
-        '',
-        f'see details [{os.path.basename(filename)}]({os.path.relpath(filename, basedir)})\n',
+        *head,
+        *desc,
         *(
             f'```{lang}',
             textwrap.dedent(cat(*body)),
-            '```'
+            '```',
+            f'<small>more details [{os.path.basename(filename)}]({os.path.relpath(filename, basedir)})</small>',
         ) if len(body) else '',
         '',
     )
@@ -55,6 +54,7 @@ def main():
     with open(out, 'w+') as fp:
         for each in files:
             fp.write(render(each, basedir=os.path.dirname(out)))
+            fp.write('\n')
 
 
 if __name__ == '__main__':
