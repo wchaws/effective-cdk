@@ -47,7 +47,7 @@ def render(filename, basedir=os.curdir):
             textwrap.dedent(cat(*body)),
             '```'
         ) if len(body) else '',
-        '---\n'
+        '',
     )
 
 

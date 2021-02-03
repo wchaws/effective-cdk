@@ -6,7 +6,6 @@ see details [S001-helloworld.ts](../src/stacks/S001-helloworld.ts)
 ```ts
 new CfnOutput(this, 'output', { value: 'hello world' });
 ```
----
 ### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
 This is originally discussed at https://stackoverflow.com/q/60645254/4108187
 and it's going to be supported from cdk side https://github.com/aws/aws-cdk/pull/12546
@@ -39,4 +38,22 @@ class MyImage implements ec2.IMachineImage {
       }),
     });
 ```
----
+### S003: Create VPC on demand
+
+
+see details [S003-Create-VPC-on-demand.ts](../src/stacks/S003-Create-VPC-on-demand.ts)
+
+```ts
+/**
+ * Create or import VPC
+ * @param scope the cdk scope
+ */
+function getOrCreateVpc(scope: Construct): ec2.IVpc {
+  // use an existing vpc or create a new one
+  return scope.node.tryGetContext('use_default_vpc') === '1' ?
+    ec2.Vpc.fromLookup(scope, 'Vpc', { isDefault: true }) :
+    scope.node.tryGetContext('use_vpc_id') ?
+      ec2.Vpc.fromLookup(scope, 'Vpc', { vpcId: scope.node.tryGetContext('use_vpc_id') }) :
+      new ec2.Vpc(scope, 'Vpc', { maxAzs: 3, natGateways: 1 });
+}
+```
