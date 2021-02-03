@@ -4,6 +4,9 @@ const project = new AwsCdkTypeScriptApp({
   cdkVersion: '1.73.0',
   jsiiFqn: 'projen.AwsCdkTypeScriptApp',
   name: 'effective-cdk',
+  deps: [
+    '@aws-cdk/aws-ec2',
+  ],
 
   /* AwsCdkTypeScriptAppOptions */
   // appEntrypoint: 'main.ts',                                                 /* The CDK app's entrypoint (relative to the source directory, which is "src" by default). */

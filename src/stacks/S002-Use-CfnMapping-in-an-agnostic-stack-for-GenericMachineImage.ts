@@ -1,18 +1,9 @@
-### S001: How to echo value in AWS CloudFormation?
+import * as ec2 from '@aws-cdk/aws-ec2';
+import { Construct, Stack, StackProps, CfnMapping, Aws } from '@aws-cdk/core';
 
+/// !title ### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
 
-see details [S001-helloworld.ts](../src/stacks/S001-helloworld.ts)
-
-```ts
-new CfnOutput(this, 'output', { value: 'hello world' });
-```
----
-### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
-
-
-see details [S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts](../src/stacks/S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts)
-
-```ts
+/// !show
 class MyImage implements ec2.IMachineImage {
   private mapping: { [k1: string]: { [k2: string]: any } } = {};
   constructor(readonly amiMap: { [region: string]: string }) {
@@ -29,6 +20,13 @@ class MyImage implements ec2.IMachineImage {
     };
   }
 }
+/// !hide
+
+export class S002 extends Stack {
+  constructor(scope: Construct, id: string, props: StackProps = {}) {
+    super(scope, id, props);
+
+    /// !show
     new ec2.Instance(this, 'Instance', {
       vpc: new ec2.Vpc(this, 'VPC'),
       instanceType: new ec2.InstanceType('t2.micro'),
@@ -37,5 +35,6 @@ class MyImage implements ec2.IMachineImage {
         'cn-northwest-1': 'ami-cn-northwest-1',
       }),
     });
-```
----
+    /// !hide
+  }
+}
