@@ -50,18 +50,10 @@ function getOrCreateVpc(scope: Construct): ec2.IVpc {
       new ec2.Vpc(scope, 'Vpc', { maxAzs: 3, natGateways: 1 });
 }
 ```
-<<<<<<< HEAD
 <small>more details [S003-Create-VPC-on-demand.ts](../src/stacks/S003-Create-VPC-on-demand.ts)</small>
 
 ### S004: Do not hardcode env
 Don’t specify env with account and region like below that will generate account/region hardcode in CloudFormation template.
-=======
-### S004: Do not hardcode env
-Don’t specify env with account and region like below that will generate account/region hardcode in CloudFormation template.
-
-see details [S004-Do-not-hardcode-env.ts](../src/stacks/S004-Do-not-hardcode-env.ts)
-
->>>>>>> 3c7b44f66c873239c0d40a827e59187d60a54c59
 ```ts
 const app = new App();
 // Don't
