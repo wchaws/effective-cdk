@@ -24,7 +24,7 @@ class MyImage implements ec2.IMachineImage {
 }
 /// !hide
 
-export class S002 extends Stack {
+export default class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
