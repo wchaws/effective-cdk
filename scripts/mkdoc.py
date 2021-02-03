@@ -5,8 +5,8 @@ import sys
 import textwrap
 
 
-DIR = os.path.abspath(sys.argv[1])
-OUT = os.path.abspath(sys.argv[2])
+def cat(*s, delimiter='\n'):
+    return delimiter.join(s)
 
 
 def cat(*s, delimiter='\n'):
@@ -47,10 +47,19 @@ def render(filename, basedir=os.curdir):
             textwrap.dedent(cat(*body)),
             '```'
         ) if len(body) else '',
-        '---'
+        '---\n'
     )
 
 
-for fname in map(lambda f: os.path.join(DIR, f), os.listdir(DIR)):
-    with open(OUT, 'w') as fp:
-        fp.write(render(fname, basedir=os.path.dirname(OUT)))
+def main():
+    dir = os.path.abspath(sys.argv[1])
+    out = os.path.abspath(sys.argv[2])
+
+    files = map(lambda f: os.path.join(dir, f), sorted(os.listdir(dir)))
+    with open(out, 'w+') as fp:
+        for each in files:
+            fp.write(render(each, basedir=os.path.dirname(out)))
+
+
+if __name__ == '__main__':
+    main()

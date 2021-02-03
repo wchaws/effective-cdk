@@ -82,6 +82,10 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-ec2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/core",
       "version": "^1.73.0",
       "type": "runtime"
