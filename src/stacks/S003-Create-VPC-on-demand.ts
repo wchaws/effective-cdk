@@ -18,7 +18,7 @@ function getOrCreateVpc(scope: Construct): ec2.IVpc {
 /// !hide
 
 
-export default class HelloWorldStack extends Stack {
+export default class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
     getOrCreateVpc(this);
