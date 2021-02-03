@@ -116,6 +116,3 @@ new lambda.Function(this, 'MyHandler', {
 ```
 <small>more details [index.ts](../src/stacks/S005-Lambda-layer/index.ts)</small>
 
-
-
-
