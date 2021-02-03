@@ -8,7 +8,8 @@ new CfnOutput(this, 'output', { value: 'hello world' });
 ```
 ---
 ### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
-
+This is originally discussed at https://stackoverflow.com/q/60645254/4108187
+and it's going to be fixed in https://github.com/aws/aws-cdk/pull/12546
 
 see details [S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts](../src/stacks/S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts)
 
