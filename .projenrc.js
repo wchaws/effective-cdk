@@ -6,6 +6,7 @@ const project = new AwsCdkTypeScriptApp({
   name: 'effective-cdk',
   deps: [
     '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-lambda',
   ],
 
   /* AwsCdkTypeScriptAppOptions */

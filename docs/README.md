@@ -1,17 +1,12 @@
 ### S001: How to echo value in AWS CloudFormation?
-
-
-see details [S001-Hello-World.ts](../src/stacks/S001-Hello-World.ts)
-
 ```ts
 new CfnOutput(this, 'output', { value: 'hello world' });
 ```
+<small>more details [S001-Hello-World.ts](../src/stacks/S001-Hello-World.ts)</small>
+
 ### S002: How to set `Instance.MachineImage` from `CfnMapping.FindInMap(“MappingName”, Aws.REGION)`?
 This is originally discussed at https://stackoverflow.com/q/60645254/4108187
 and it's going to be supported from cdk side https://github.com/aws/aws-cdk/pull/12546
-
-see details [S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts](../src/stacks/S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts)
-
 ```ts
 class MyImage implements ec2.IMachineImage {
   private mapping: { [k1: string]: { [k2: string]: any } } = {};
@@ -38,11 +33,9 @@ class MyImage implements ec2.IMachineImage {
       }),
     });
 ```
+<small>more details [S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts](../src/stacks/S002-Use-CfnMapping-in-an-agnostic-stack-for-GenericMachineImage.ts)</small>
+
 ### S003: Create VPC on demand
-
-
-see details [S003-Create-VPC-on-demand.ts](../src/stacks/S003-Create-VPC-on-demand.ts)
-
 ```ts
 /**
  * Create or import VPC
@@ -57,11 +50,10 @@ function getOrCreateVpc(scope: Construct): ec2.IVpc {
       new ec2.Vpc(scope, 'Vpc', { maxAzs: 3, natGateways: 1 });
 }
 ```
+<small>more details [S003-Create-VPC-on-demand.ts](../src/stacks/S003-Create-VPC-on-demand.ts)</small>
+
 ### S004: Do not hardcode env
 Don’t specify env with account and region like below that will generate account/region hardcode in CloudFormation template.
-
-see details [S004-Do-not-hardcode-env.ts](../src/stacks/S004-Do-not-hardcode-env.ts)
-
 ```ts
 const app = new App();
 // Don't
@@ -79,3 +71,51 @@ new MyStack(app, 'Stack', {
   },
 });
 ```
+<small>more details [S004-Do-not-hardcode-env.ts](../src/stacks/S004-Do-not-hardcode-env.ts)</small>
+
+### S005: Lambda layer
+```
+.
+├── index.ts
+└── lambda/
+    ├── package-lock.json
+    ├── package.json
+    └── src/
+        └── index.js*
+
+2 directories, 4 files
+```
+```ts
+const layer = new lambda.LayerVersion(this, 'MyLayer', {
+  code: lambda.Code.fromAsset(path.join(__dirname, './lambda/'), {
+    bundling: {
+      image: lambda.Runtime.NODEJS_12_X.bundlingDockerImage,
+      command: [
+        'bash', '-xc', [
+          'export npm_config_update_notifier=false',
+          'export npm_config_cache=$(mktemp -d)', // https://github.com/aws/aws-cdk/issues/8707#issuecomment-757435414
+          'cd $(mktemp -d)',
+          'cp -v /asset-input/package*.json .',
+          'npm i --only=prod',
+          'mkdir -p /asset-output/nodejs/',
+          'cp -au node_modules /asset-output/nodejs/',
+        ].join('&&'),
+      ],
+    },
+  }),
+  compatibleRuntimes: [lambda.Runtime.NODEJS_12_X],
+  description: 'A layer to test the L2 construct',
+});
+
+new lambda.Function(this, 'MyHandler', {
+  runtime: lambda.Runtime.NODEJS_12_X,
+  code: lambda.Code.fromAsset(path.join(__dirname, './lambda/src')),
+  handler: 'index.handler',
+  layers: [layer],
+});
+```
+<small>more details [index.ts](../src/stacks/S005-Lambda-layer/index.ts)</small>
+
+
+
+
