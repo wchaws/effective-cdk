@@ -9,6 +9,10 @@ DIR = os.path.abspath(sys.argv[1])
 OUT = os.path.abspath(sys.argv[2])
 
 
+def cat(*s, delimiter='\n'):
+    return delimiter.join(s)
+
+
 def render(filename, basedir=os.curdir):
     lang = os.path.splitext(filename)[1][1:]
     show = False
@@ -32,15 +36,19 @@ def render(filename, basedir=os.curdir):
                 desc.append(m.group(1))
                 continue
             if show:
-                body.append(line)
-    return ''.join((
-        f'### {" ".join(head)}\n',
-        f'{" ".join(desc)} \n\n',
-        f'[source code]({os.path.relpath(filename, basedir)})\n',
-        f'```{lang}\n',
-        textwrap.dedent(''.join(body)),
-        '```\n'
-    ))
+                body.append(line.rstrip())
+    return cat(
+        cat(*head),
+        cat(*desc),
+        '',
+        f'see details [{os.path.basename(filename)}]({os.path.relpath(filename, basedir)})\n',
+        *(
+            f'```{lang}',
+            textwrap.dedent(cat(*body)),
+            '```'
+        ) if len(body) else '',
+        '---'
+    )
 
 
 for fname in map(lambda f: os.path.join(DIR, f), os.listdir(DIR)):
