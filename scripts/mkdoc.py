@@ -9,6 +9,10 @@ def cat(*s, delimiter='\n'):
     return delimiter.join(s)
 
 
+def cat(*s, delimiter='\n'):
+    return delimiter.join(s)
+
+
 def render(filename, basedir=os.curdir):
     lang = os.path.splitext(filename)[1][1:]
     show = False
