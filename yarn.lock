@@ -278,7 +278,7 @@
     string-width "^4.2.0"
     table "^6.0.7"
 
-"@aws-cdk/core@1.89.0", "@aws-cdk/core@^1.73.0":
+"@aws-cdk/core@1.89.0":
   version "1.89.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.89.0.tgz#28ee925cad013c06269a9f4200e7884ec0962388"
   integrity sha512-Ou3DI7f/Wb6mrGqG8TQsBdJNuOte1PwnDpGnhdS5PeIWE2D+NMHvj+ryDdP/TCfRHn2AIqSlgVtjUn1dIhZyag==
@@ -286,6 +286,20 @@
     "@aws-cdk/cloud-assembly-schema" "1.89.0"
     "@aws-cdk/cx-api" "1.89.0"
     "@aws-cdk/region-info" "1.89.0"
+    "@balena/dockerignore" "^1.0.2"
+    constructs "^3.2.0"
+    fs-extra "^9.1.0"
+    ignore "^5.1.8"
+    minimatch "^3.0.4"
+
+"@aws-cdk/core@^1.73.0":
+  version "1.90.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.90.0.tgz#fba613a3e82d4fc64b595decb915f6bcf371e6a9"
+  integrity sha512-d3PdHbp2qtDvtfjkV9AvQzU4uE38FdrL+gecESOwKoNmply4+IzXouvtcJAmiU2TC5ALk9PewOmJ+YQskNzKSg==
+  dependencies:
+    "@aws-cdk/cloud-assembly-schema" "1.90.0"
+    "@aws-cdk/cx-api" "1.90.0"
+    "@aws-cdk/region-info" "1.90.0"
     "@balena/dockerignore" "^1.0.2"
     constructs "^3.2.0"
     fs-extra "^9.1.0"
