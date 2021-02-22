@@ -3,14 +3,14 @@
 
 
 "@aws-cdk/assert@^1.73.0":
-  version "1.90.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.90.0.tgz#12719eb7927ef76532d4354e1f57662349cf3baa"
-  integrity sha512-p5ncf3u3rmodysEYBGBMoj0XVOlfPG+2slvXnI/nM5lpq1zZVYzVvH1kAxCbufjcxp16gtCczOHdgHmD6k0dLQ==
+  version "1.90.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.90.1.tgz#0a8ca60b57eb214e0e36524eb9524e787c0a6efa"
+  integrity sha512-3DYoCtKSwNR0Ygcoj9f4MuQo0CP0DNKTl9AmGpCY8GP7fZp0pRiaDH9neHN5Ot2Sh/UFhcc/7qMtvfISmRr/2g==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.90.0"
-    "@aws-cdk/cloudformation-diff" "1.90.0"
-    "@aws-cdk/core" "1.90.0"
-    "@aws-cdk/cx-api" "1.90.0"
+    "@aws-cdk/cloud-assembly-schema" "1.90.1"
+    "@aws-cdk/cloudformation-diff" "1.90.1"
+    "@aws-cdk/core" "1.90.1"
+    "@aws-cdk/cx-api" "1.90.1"
     constructs "^3.2.0"
 
 "@aws-cdk/assets@1.90.1":
@@ -224,13 +224,6 @@
     "@aws-cdk/core" "1.90.1"
     constructs "^3.2.0"
 
-"@aws-cdk/cfnspec@1.90.0":
-  version "1.90.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/cfnspec/-/cfnspec-1.90.0.tgz#a36fbea033368d5a8d69d2e0f7b40d4e33b0593b"
-  integrity sha512-f4FarlRNJXWMUfCw2Y8a926XAB+ajLX03+XoFOsrHcLr/19K+KXp/krHLZoSFbmC9k3DKDeRMkNmtgFQ6Rf4AA==
-  dependencies:
-    md5 "^2.3.0"
-
 "@aws-cdk/cfnspec@1.90.1":
   version "1.90.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/cfnspec/-/cfnspec-1.90.1.tgz#af7b1588ec42cff389d6d32ba680d35e031f3645"
@@ -253,18 +246,6 @@
   dependencies:
     jsonschema "^1.4.0"
     semver "^7.3.4"
-
-"@aws-cdk/cloudformation-diff@1.90.0":
-  version "1.90.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/cloudformation-diff/-/cloudformation-diff-1.90.0.tgz#a21bad8e4e1778a01644d9cdd309c4ad51c8c38f"
-  integrity sha512-bKY59stgj7rinnWjNxo6H73ENOVbTlKyNCIAQC3GHJnJa3Iw7V0hLlWAOpceZCpAAIaWJ30rb/ZYrK1JVjA68w==
-  dependencies:
-    "@aws-cdk/cfnspec" "1.90.0"
-    colors "^1.4.0"
-    diff "^5.0.0"
-    fast-deep-equal "^3.1.3"
-    string-width "^4.2.0"
-    table "^6.0.7"
 
 "@aws-cdk/cloudformation-diff@1.90.1":
   version "1.90.1"
