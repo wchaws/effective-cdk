@@ -3,13 +3,13 @@
 
 
 "@aws-cdk/assert@^1.73.0":
-  version "1.110.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.110.0.tgz#8cf6a2b4550b4dcf697c096df4f6f3ebf48dfd5e"
-  integrity sha512-OzTXT4aD+IJgyn0GMgKq3FoLTmztPun3pqK/fE6jtCIggKyoZIeqZ3boZlJ2MHTcwgFm+qNp9fEsiGJ2AcHDxw==
+  version "1.110.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.110.1.tgz#1f03c0f008e9e41bb2a6eb62599dc2245a06695c"
+  integrity sha512-GdLgThJrOZ4VsvnuJu+uYtbbx884m0jFavy4NgWc7KSE+Vn4X51VtO4Ju02el/pMSgS7MLgbGQXLYuFAlt3ITA==
   dependencies:
-    "@aws-cdk/cloudformation-diff" "1.110.0"
-    "@aws-cdk/core" "1.110.0"
-    "@aws-cdk/cx-api" "1.110.0"
+    "@aws-cdk/cloudformation-diff" "1.110.1"
+    "@aws-cdk/core" "1.110.1"
+    "@aws-cdk/cx-api" "1.110.1"
     constructs "^3.3.69"
 
 "@aws-cdk/assets@1.110.0":
@@ -351,6 +351,13 @@
   dependencies:
     md5 "^2.3.0"
 
+"@aws-cdk/cfnspec@1.110.1":
+  version "1.110.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cfnspec/-/cfnspec-1.110.1.tgz#6bbfd8f55f4fbd1dc2238b321d3053be58e35fd7"
+  integrity sha512-5cSKh20hKEiQUd0IzKn69ns2zwq7MmgeJLdO38Bf5dHf8VEVjfZnCAxho7daUJT0kolQWW9Dr1ZeJau/rFvyXA==
+  dependencies:
+    md5 "^2.3.0"
+
 "@aws-cdk/cloud-assembly-schema@1.110.0":
   version "1.110.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-1.110.0.tgz#30998958945fffa2e66baa84d14e320dc8a7a1e2"
@@ -373,6 +380,19 @@
   integrity sha512-b1/DJ2eSZc7jRGnFlqTOK+b8QkWrHLm4SdhBR5YyIFWZRpYf0Xp9pJYgtQ9e7wrRKtx3isxhxg9WZxXl9gEeig==
   dependencies:
     "@aws-cdk/cfnspec" "1.110.0"
+    "@types/node" "^10.17.60"
+    colors "^1.4.0"
+    diff "^5.0.0"
+    fast-deep-equal "^3.1.3"
+    string-width "^4.2.2"
+    table "^6.7.1"
+
+"@aws-cdk/cloudformation-diff@1.110.1":
+  version "1.110.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloudformation-diff/-/cloudformation-diff-1.110.1.tgz#1442d84ca02c5671423f7fd3bfb8d4126d8656e3"
+  integrity sha512-QaVc4YFBwLzp4uPD6enSNAV5stUvJ6aQ0km9hC2BPR68vc0NAHKX+ZZbJoiKPu/0aXjzrYvEqYw4qRIM0d6RlQ==
+  dependencies:
+    "@aws-cdk/cfnspec" "1.110.1"
     "@types/node" "^10.17.60"
     colors "^1.4.0"
     diff "^5.0.0"
