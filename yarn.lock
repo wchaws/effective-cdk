@@ -3,13 +3,13 @@
 
 
 "@aws-cdk/assert@^1.73.0":
-  version "1.127.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.127.0.tgz#7a3756def9ed8b4d298079bdb4e3be05aa2524c1"
-  integrity sha512-sZDURrPbLaS+Fadul1MX5Xy/l2K5QvbS7poomnwD1Ejs+1chgksVWBqRehjjAmDTIy1zNb4K+8qm9oFtdw3VmQ==
+  version "1.128.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.128.0.tgz#aff0bae1971b42dab9e2a73b9ed0714f42e79bf6"
+  integrity sha512-a+ZmotJYhEZ3ry4YgY9IzVhQrmsW4od9EZvA/E2C9hsx1smuz3lWXj9Gs6g0I4JicxmbCgiZpuCwU/Udo1GhQA==
   dependencies:
-    "@aws-cdk/cloudformation-diff" "1.127.0"
-    "@aws-cdk/core" "1.127.0"
-    "@aws-cdk/cx-api" "1.127.0"
+    "@aws-cdk/cloudformation-diff" "1.128.0"
+    "@aws-cdk/core" "1.128.0"
+    "@aws-cdk/cx-api" "1.128.0"
     constructs "^3.3.69"
 
 "@aws-cdk/assets@1.128.0":
