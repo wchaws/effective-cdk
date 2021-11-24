@@ -1405,19 +1405,19 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 aws-cdk@^1.73.0:
-  version "1.133.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-1.133.0.tgz#c10c7e7da569a1aeecd656d3880b9b955c8cf1a6"
-  integrity sha512-wyScFFqGXiZFOtlZePtD1r2+lfAEMcQwDsKMZZyicfv3QjDpaPjHColGAuOthE56n7z23CwlEA9mJBHMFwcZPA==
+  version "1.134.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-1.134.0.tgz#c25e8f9fde10a5732e036a7c121444171ee7f872"
+  integrity sha512-dtCUT9/NvRCe1iNRFcI8rR3RBpOOG9sD99nZeP9KxYfZJjwrl0wi44LYTfZwMubeRkdCG7W12WYSDYWG6Z3HWw==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.133.0"
-    "@aws-cdk/cloudformation-diff" "1.133.0"
-    "@aws-cdk/cx-api" "1.133.0"
-    "@aws-cdk/region-info" "1.133.0"
+    "@aws-cdk/cloud-assembly-schema" "1.134.0"
+    "@aws-cdk/cloudformation-diff" "1.134.0"
+    "@aws-cdk/cx-api" "1.134.0"
+    "@aws-cdk/region-info" "1.134.0"
     "@jsii/check-node" "1.44.2"
     archiver "^5.3.0"
     aws-sdk "^2.979.0"
     camelcase "^6.2.1"
-    cdk-assets "1.133.0"
+    cdk-assets "1.134.0"
     chokidar "^3.5.2"
     colors "^1.4.0"
     decamelize "^5.0.1"
@@ -1719,13 +1719,13 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cdk-assets@1.133.0:
-  version "1.133.0"
-  resolved "https://registry.yarnpkg.com/cdk-assets/-/cdk-assets-1.133.0.tgz#603c2f3d6db3818e200a693a2cbc6a86a882c6c4"
-  integrity sha512-AHancsaf56wk1wRh3VWSwKG+2YZvdIg1RdHaEkdovLj3ItzOzD4ena8zodw5IoEVM9W2R6Qbre999sE0RY/+zw==
+cdk-assets@1.134.0:
+  version "1.134.0"
+  resolved "https://registry.yarnpkg.com/cdk-assets/-/cdk-assets-1.134.0.tgz#95fff88e6695c8de282d0911e77e9834bf2c2a4a"
+  integrity sha512-bRGai5VZEZr0wSp77QC++BUmNlC05uafs9RT01mz2qtXlDuH3XZfAc5+6yaP/kJ2//NnugihKTQSweuPU84rRg==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.133.0"
-    "@aws-cdk/cx-api" "1.133.0"
+    "@aws-cdk/cloud-assembly-schema" "1.134.0"
+    "@aws-cdk/cx-api" "1.134.0"
     archiver "^5.3.0"
     aws-sdk "^2.848.0"
     glob "^7.2.0"
