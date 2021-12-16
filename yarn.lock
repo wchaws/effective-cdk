@@ -358,6 +358,14 @@
     fs-extra "^9.1.0"
     md5 "^2.3.0"
 
+"@aws-cdk/cfnspec@1.136.0":
+  version "1.136.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cfnspec/-/cfnspec-1.136.0.tgz#6ead0af91f340d66016f2d13967e6feeb93c0e23"
+  integrity sha512-UDN/mS+ZGDPz6WeCwnsQY6KApIs7pzL/90oTdWcFMVUYYR3mtv3cWpTcRHB4dfTFKMaUP1tPhdm8fUYU+Yxzkg==
+  dependencies:
+    fs-extra "^9.1.0"
+    md5 "^2.3.0"
+
 "@aws-cdk/cloud-assembly-schema@1.135.0":
   version "1.135.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-1.135.0.tgz#871519b39066675fe304a8c6ffe6e3c10062a91d"
@@ -380,6 +388,19 @@
   integrity sha512-cItLmKaCoj70g2tSC1X495CAZJUZAhXXh3olHwmYlAGRu/i941vz4z/DGLgmywaybnqKYpkk9XDGvvVPovG58g==
   dependencies:
     "@aws-cdk/cfnspec" "1.135.0"
+    "@types/node" "^10.17.60"
+    colors "^1.4.0"
+    diff "^5.0.0"
+    fast-deep-equal "^3.1.3"
+    string-width "^4.2.3"
+    table "^6.7.5"
+
+"@aws-cdk/cloudformation-diff@1.136.0":
+  version "1.136.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloudformation-diff/-/cloudformation-diff-1.136.0.tgz#5456beda4064784b20e295e185f34375abaf401e"
+  integrity sha512-s0xUSL1Ew5wGJ14ZQwstK5ui1UB1UYiBLUPuihWK2yBul/YaW0JXMMANGe+yZglUTRqoX5CupO/SAx/FCbmzjg==
+  dependencies:
+    "@aws-cdk/cfnspec" "1.136.0"
     "@types/node" "^10.17.60"
     colors "^1.4.0"
     diff "^5.0.0"
@@ -1498,19 +1519,19 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 aws-cdk@^1.73.0:
-  version "1.135.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-1.135.0.tgz#b997b33ecf2109bf6286c6eefff37bf125fc78d9"
-  integrity sha512-4T/M0JF7m7Hcolij2a4Sbp5rLxPvKr6noCGtKgPIwaoCvQNOmHRgn/mHy31y6sX8/aPc90wt2Pc/CMPmBof01g==
+  version "1.136.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-1.136.0.tgz#b114fbde030e82ab942832ab8c512210157952c4"
+  integrity sha512-n8pfnHXKhq4Z5X5otP38CoMfXYyIcfW0KkVYl07Xu7nk4ff0MBIC39yVzucgSKlq4dk02V9Bg1Bkujw9QIXbFg==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.135.0"
-    "@aws-cdk/cloudformation-diff" "1.135.0"
-    "@aws-cdk/cx-api" "1.135.0"
-    "@aws-cdk/region-info" "1.135.0"
+    "@aws-cdk/cloud-assembly-schema" "1.136.0"
+    "@aws-cdk/cloudformation-diff" "1.136.0"
+    "@aws-cdk/cx-api" "1.136.0"
+    "@aws-cdk/region-info" "1.136.0"
     "@jsii/check-node" "1.47.0"
     archiver "^5.3.0"
     aws-sdk "^2.979.0"
     camelcase "^6.2.1"
-    cdk-assets "1.135.0"
+    cdk-assets "1.136.0"
     chokidar "^3.5.2"
     colors "^1.4.0"
     decamelize "^5.0.1"
@@ -1812,13 +1833,13 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cdk-assets@1.135.0:
-  version "1.135.0"
-  resolved "https://registry.yarnpkg.com/cdk-assets/-/cdk-assets-1.135.0.tgz#37457915992110394ae7e721df557eb3dc627b5f"
-  integrity sha512-wYQO/QeGm9s4Z8kg00WZGyyPl/JSINqEbBFuRemvS0OMiGQIzVR5sNJ8Xg/P7wp/l64lvsjMhKIft08HQSSHbA==
+cdk-assets@1.136.0:
+  version "1.136.0"
+  resolved "https://registry.yarnpkg.com/cdk-assets/-/cdk-assets-1.136.0.tgz#c8db29cda4e641fca6f8f85d896646ab5cb60fd6"
+  integrity sha512-kqHzFyLFu5WNTqYabar3HVZme5et3rjMDZhr1dEoIy+aK0pLLDxvKi6x4JTSCKkfp9Es/tPi8qTo0UvPJWSUlw==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.135.0"
-    "@aws-cdk/cx-api" "1.135.0"
+    "@aws-cdk/cloud-assembly-schema" "1.136.0"
+    "@aws-cdk/cx-api" "1.136.0"
     archiver "^5.3.0"
     aws-sdk "^2.848.0"
     glob "^7.2.0"
